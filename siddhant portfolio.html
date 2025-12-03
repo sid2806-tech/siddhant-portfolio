@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhant Patil - Full Stack & AI Prompt Engineer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Use Inter font family -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0d11; /* Very dark background */
+            color: #e5e7eb; /* Light grey text */
+        }
+        /* Custom scroll indicator styling */
+        #progress-bar {
+            height: 4px;
+            background: linear-gradient(to right, #6366f1, #c084fc); /* Indigo to Purple gradient */
+            width: 0%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 50;
+        }
+        /* Style for the prominent h1 text */
+        .hero-title {
+            background: linear-gradient(to right, #6366f1, #c084fc, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        /* Custom styling for the profile image border */
+        .profile-border {
+            border: 4px solid;
+            border-image: linear-gradient(45deg, #6366f1, #c084fc) 1;
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile-border:hover {
+            transform: scale(1.02);
+        }
+        /* Custom styling for skill cards */
+        .skill-card {
+            background-color: #1a1c22;
+            transition: all 0.3s ease-in-out;
+        }
+        .skill-card:hover {
+            background-color: #262831;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+        /* Ensure anchors scroll correctly */
+        section {
+            padding-top: 5rem; /* Offset for fixed header */
+            margin-top: -5rem;
+        }
+    </style>
+</head>
+<body class="selection:bg-indigo-600 selection:text-white">
+
+    <!-- Progress Bar -->
+    <div id="progress-bar"></div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-[#0c0d11] bg-opacity-95 backdrop-blur-sm shadow-lg border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <a href="#hero" class="text-3xl font-extrabold text-indigo-400">
+                <span class="text-white">S</span><span class="text-indigo-400">P</span>.
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-200">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-200">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition duration-200">Projects</a>
+                <a href="#education" class="text-gray-300 hover:text-indigo-400 transition duration-200">Education</a>
+                <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-200">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-indigo-400 p-2 rounded-md transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center bg-[#0c0d11]">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-indigo-400 rounded-md transition duration-200">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-indigo-400 rounded-md transition duration-200">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-indigo-400 rounded-md transition duration-200">Projects</a>
+                <a href="#education" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-indigo-400 rounded-md transition duration-200">Education</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-indigo-400 rounded-md transition duration-200">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center pt-16 md:pt-0">
+            <div class="grid md:grid-cols-2 gap-12 items-center w-full">
+                <!-- Text Content -->
+                <div class="order-2 md:order-1 text-center md:text-left">
+                    <span class="inline-flex items-center text-sm font-semibold text-green-400 bg-green-900/50 px-3 py-1 rounded-full mb-6 ring-2 ring-green-400/30">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle mr-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                        Available for opportunities
+                    </span>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
+                        Building the <br><span class="hero-title">Future with AI</span>
+                    </h1>
+                    <p class="text-lg text-gray-400 mb-8">
+                        Hi, I'm <span class="font-bold text-white">Siddhant Patil</span>. A Full Stack Developer and Prompt Engineer passionate about merging web technologies with artificial intelligence to create scalable, human-centric solutions.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-10">
+                        <a href="#projects" class="w-full sm:w-auto px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-[1.02] active:scale-95">View Work</a>
+                        <a href="mailto:siddhantpatil2806@gmail.com" class="w-full sm:w-auto px-8 py-3 bg-gray-800 text-gray-300 font-semibold rounded-lg hover:bg-gray-700 transition duration-300 transform hover:scale-[1.02] active:scale-95">Contact me</a>
+                    </div>
+                    <!-- Social Icons -->
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <a href="https://github.com/sid2806-tech" target="_blank" class="text-gray-400 hover:text-white transition duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.6.8.8 0 0 1-.3-1.6c.7-.3 1.4-.6 2.1-.9a10 10 0 0 0 2.2-4.5V7.4a.5.5 0 0 0-.2-.4c-.4-.2-.8-.3-1.3-.3a5 5 0 0 0-4.5 2.5c-.3.4-.7.6-1.1.6S9.7 9.8 9.4 9.4a5 5 0 0 0-4.5-2.5c-.5 0-.9.1-1.3.3a.5.5 0 0 0-.2.4v1.8a10 10 0 0 0 2.2 4.5c.7.3 1.4.6 2.1.9a.8.8 0 0 1-.3 1.6 4.8 4.8 0 0 0-1 3.6v4"/><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/siddhantpatil2806" target="_blank" class="text-gray-400 hover:text-white transition duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 0-6-6A6 6 0 0 0 4 8c0 3.31 2.69 6 6 6a6 6 0 0 0 6-6zM4 14v6h4v-6H4zm6 0v6h4v-6h-4zm6 0v6h4v-6h-4z"/></svg>
+                        </a>
+                        <a href="mailto:siddhantpatil2806@gmail.com" class="text-gray-400 hover:text-white transition duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.83 1.83 0 0 1-2.07 0L2 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image and Badges -->
+                <div class="order-1 md:order-2 flex justify-center relative">
+                    <div class="relative">
+                        <!-- Profile Image -->
+                       <a href="https://postimg.cc/sQDxR88Y" target="_blank"><img src="https://i.postimg.cc/B62K2fBV/Whats_App_Image_2025_11_25_at_21_32_50_256751c5.jpg" alt="Whats_App_Image_2025_11_25_at_21_32_50_256751c5"  alt="Siddhant Patil Profile" 
+                            class="profile-border w-64 h-64 sm:w-80 sm:h-80 object-cover rounded-full z-10"
+                            onerror="this.onerror=null;this.src='https://placehold.co/320x320/1e293b/ffffff?text=Siddhant+Patil'" ></a>
+                        <!-- Specialty Badges (mimicking the video) -->
+                        <div class="absolute top-1/4 -left-10 bg-indigo-900/70 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-white shadow-xl border border-indigo-500/50 transform rotate-[-10deg] hidden sm:block">
+                            Full Stack Dev
+                        </div>
+                        <div class="absolute bottom-1/4 -right-10 bg-purple-900/70 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-white shadow-xl border border-purple-500/50 transform rotate-[10deg] hidden sm:block">
+                            AI Prompt Eng
+                        </div>
+                        <!-- Blurred Background Circle -->
+                        <div class="absolute inset-0 bg-indigo-500/20 rounded-full blur-3xl opacity-50 z-0"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-10 text-white">About Me</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-400 space-y-6 bg-[#1a1c22] p-8 rounded-xl shadow-2xl">
+                <p>
+                    I am <span class="text-white font-semibold">Siddhant Hiraman Patil</span>, a 2nd-year B.Tech IT student at NMIET, Pune, with a relentless drive to build impactful technology. My journey combines a strong foundation in C++, Java, and Python with modern web development. I specialize in integrating AI capabilities into web applications, making them smarter and more accessible.
+                </p>
+                <p>
+                    Beyond code, I'm an active community builder, participating in technology communities like GDGC and SAIT. I believe in technology that solves real-world problems—proven by my award-winning project, <span class="text-indigo-400 font-semibold">Quickcure</span>, which earned 1st runner-up at Ideothon 2.0. I am also passionate about cybersecurity awareness, having hosted a program for the student community.
+                </p>
+            </div>
+        </section>
+
+        <!-- Technical Arsenal / Skills Section -->
+        <section id="skills" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">Technical Arsenal</h2>
+            <p class="text-xl text-center text-gray-400 mb-12">
+                A comprehensive toolkit for building modern solutions.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Core & Languages -->
+                <div class="skill-card p-6 rounded-xl border border-gray-800">
+                    <div class="text-indigo-400 mb-4 flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-white">Core & Languages</h3>
+                    <ul class="text-gray-400 space-y-2 text-center">
+                        <li>C & C++</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <!-- Frontend Web -->
+                <div class="skill-card p-6 rounded-xl border border-gray-800">
+                    <div class="text-indigo-400 mb-4 flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-grid"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="12" x2="12" y1="3" y2="21"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-white">Frontend Web</h3>
+                    <ul class="text-gray-400 space-y-2 text-center">
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React (learning)</li>
+                        <li>Tailwind CSS</li>
+                        <li>Framer Motion</li>
+                    </ul>
+                </div>
+
+                <!-- Specialized Tech -->
+                <div class="skill-card p-6 rounded-xl border border-gray-800">
+                    <div class="text-indigo-400 mb-4 flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot"><path d="M12 8V4"/><path d="M11 19h2"/><rect width="18" height="8" x="3" y="10" rx="4"/><path d="M22 6c-3 3-5 5-7 5H9c-2 0-4-2-7-5"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-white">Specialized Tech</h3>
+                    <ul class="text-gray-400 space-y-2 text-center">
+                        <li>AI Prompt Engineering</li>
+                        <li>Chatbot Integration</li>
+                        <li>AI APIs</li>
+                        <li>Video APIs (WebRTC)</li>
+                        <li>REST APIs</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-card p-6 rounded-xl border border-gray-800">
+                    <div class="text-indigo-400 mb-4 flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.2-3.2a1 1 0 0 0 0-1.4l-1.6-1.6a1 1 0 0 0-1.4 0z"/><path d="m20.5 5.5-2.2 2.2"/><path d="M18 10l-1.4-1.4"/><path d="M15 15l-4.5 4.5"/><path d="m11 11 4.5-4.5"/><path d="m18 10 3 3"/><path d="m19 11 2 2"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-white">Tools & Platforms</h3>
+                    <ul class="text-gray-400 space-y-2 text-center">
+                        <li>Git & GitHub</li>
+                        <li>VS Code</li>
+                        <li>Linux</li>
+                        <li>Cybersecurity Basics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">Featured Projects</h2>
+            <p class="text-xl text-center text-gray-400 mb-12">
+                Innovation through code and AI.
+            </p>
+            <div class="text-right mb-6">
+                <a href="https://github.com/sid2806-tech" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium transition duration-200 flex items-center justify-end">
+                    View Github <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- Quickcure Project Card -->
+            <div class="bg-[#1a1c22] p-8 rounded-xl shadow-2xl border border-gray-800 grid md:grid-cols-3 items-center gap-8">
+                <div class="md:col-span-2">
+                    <div class="inline-flex items-center text-sm font-semibold text-purple-400 bg-purple-900/50 px-3 py-1 rounded-full mb-4 ring-2 ring-purple-400/30">
+                        1ST RUNNER UP - IDEOTHON 2.0 | HEALTHCARE
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">Quickcure</h3>
+                    <p class="text-gray-400 mb-6">
+                        An AI-powered healthcare platform revolutionizing doctor-patient interaction. Engineered to bridge the gap in medical accessibility with cutting-edge tech.
+                    </p>
+                    
+                    <ul class="text-gray-400 space-y-3 mb-6 list-disc list-inside">
+                        <li>AI Chatbot with NLP for symptom analysis</li>
+                        <li>Real-time video consultation integration</li>
+                        <li>Multilingual support (16+ languages)</li>
+                        <li>Medicine recommendation and general health info</li>
+                    </ul>
+
+                    <!-- Stack Badges -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300">HTML/CSS</span>
+                        <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-yellow-500/20 text-yellow-300">JavaScript</span>
+                        <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-green-500/20 text-green-300">Python (Backend)</span>
+                        <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-red-500/20 text-red-300">AI APIs</span>
+                        <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-teal-500/20 text-teal-300">WebRTC</span>
+                    </div>
+                </div>
+                
+                <!-- Icon/Visual -->
+                <div class="md:col-span-1 flex flex-col items-center justify-center p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+                    <div class="text-indigo-400 mb-4">
+                        <!-- Placeholder for AI Health Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-pulse"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.2 14.5H2"/><path d="M9.5 14.5c.3-.5.5-.9.9-1.4h4.2c.4.5.6.9.9 1.4"/></svg>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-300 mb-4 text-center">AI-Driven Health</p>
+                    <a href="https://github.com/sid2806-tech" target="_blank" class="px-6 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition duration-300">View Source</a>
+                </div>
+            </div>
+            
+            <!-- Future Project Placeholder -->
+            <div class="text-center mt-12">
+                <p class="text-xl text-gray-500 italic">More projects showcasing full-stack proficiency and AI integration available on my GitHub!</p>
+            </div>
+        </section>
+
+
+        <!-- Education & Certifications Section -->
+        <section id="education" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Education & Certifications</h2>
+            <div class="max-w-4xl mx-auto space-y-12">
+                
+                <!-- B.Tech Information Technology -->
+                <div class="flex flex-col md:flex-row items-start bg-[#1a1c22] p-6 rounded-xl border border-gray-800 shadow-xl">
+                    <div class="md:w-1/2 pr-8 border-b md:border-b-0 md:border-r border-gray-700 pb-4 md:pb-0 mb-4 md:mb-0">
+                        <h3 class="text-2xl font-semibold text-indigo-400">B.Tech Information Technology</h3>
+                        <p class="text-gray-300 mt-1">NMIET, Pune</p>
+                        <p class="text-sm text-gray-500 mt-1">Expected Graduation: 2028</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <p class="text-lg text-gray-400">Current Year: 2nd Year</p>
+                        <p class="text-lg text-gray-400">CGPA (2nd Sem): <span class="text-green-400 font-bold">8.14</span></p>
+                        <p class="text-sm text-gray-500 mt-2">Strong academic foundation in core IT subjects and programming languages.</p>
+                    </div>
+                </div>
+
+                <!-- Prompt Engineering Certification -->
+                <div class="flex flex-col md:flex-row items-start bg-[#1a1c22] p-6 rounded-xl border border-gray-800 shadow-xl">
+                    <div class="md:w-1/2 pr-8 border-b md:border-b-0 md:border-r border-gray-700 pb-4 md:pb-0 mb-4 md:mb-0">
+                        <h3 class="text-2xl font-semibold text-purple-400">Prompt Engineering Course</h3>
+                        <p class="text-gray-300 mt-1">My Project HD</p>
+                        <p class="text-sm text-gray-500 mt-1">Awarded: Nov 2025</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <p class="text-lg text-gray-400">Specialized in advanced prompt engineering techniques and AI model integration.</p>
+                        <p class="text-sm text-gray-500 mt-2">Crucial skill for building effective and reliable AI-integrated applications.</p>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity Program Host -->
+                <div class="flex flex-col md:flex-row items-start bg-[#1a1c22] p-6 rounded-xl border border-gray-800 shadow-xl">
+                    <div class="md:w-1/2 pr-8 border-b md:border-b-0 md:border-r border-gray-700 pb-4 md:pb-0 mb-4 md:mb-0">
+                        <h3 class="text-2xl font-semibold text-yellow-400">Cybersecurity Program Host</h3>
+                        <p class="text-gray-300 mt-1">PSI of Talegaon, NMIET</p>
+                        <p class="text-sm text-gray-500 mt-1">2024 - 2025</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <p class="text-lg text-gray-400">Hosted and coordinated cybersecurity awareness program for the student community.</p>
+                        <p class="text-sm text-gray-500 mt-2">Demonstrates initiative and commitment to security best practices.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center">
+            <h2 class="text-4xl font-bold mb-4 text-white">Let's Build Something Amazing</h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                I'm currently available for freelance projects and internships. If you're looking for a developer who can merge web technologies with AI, let's talk.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="mailto:siddhantpatil2806@gmail.com" class="flex items-center justify-center px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-[1.02] active:scale-95">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square mr-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Say Hello
+                </a>
+                <a href="tel:+917719822627" class="flex items-center justify-center px-8 py-3 bg-gray-800 text-gray-300 font-semibold rounded-lg hover:bg-gray-700 transition duration-300 transform hover:scale-[1.02] active:scale-95">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-3.34-2.18 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.08 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +91 77198 22627
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+            <p class="order-2 sm:order-1 mt-4 sm:mt-0">© 2025 Siddhant Patil. All rights reserved.</p>
+            <div class="order-1 sm:order-2 flex space-x-6">
+                <a href="https://github.com/sid2806-tech" target="_blank" class="hover:text-white transition duration-200">GitHub</a>
+                <a href="https://linkedin.com/in/siddhantpatil2806" target="_blank" class="hover:text-white transition duration-200">LinkedIn</a>
+                <a href="mailto:siddhantpatil2806@gmail.com" class="hover:text-white transition duration-200">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Mobile Menu Toggle Logic
+            const menuButton = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Change icon from menu to close when open (optional, but good UX)
+                const icon = menuButton.querySelector('svg');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.innerHTML = '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>'; // Menu icon
+                } else {
+                    icon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>'; // Close icon
+                }
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuButton.querySelector('svg').innerHTML = '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>';
+                });
+            });
+
+            // Scroll Progress Bar Logic
+            const progressBar = document.getElementById('progress-bar');
+            
+            function updateProgressBar() {
+                // Total scrollable height
+                const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                // Current scroll position
+                const scrollPosition = window.scrollY;
+                // Calculate percentage
+                const progress = (scrollPosition / totalHeight) * 100;
+                
+                progressBar.style.width = progress + '%';
+            }
+
+            // Attach event listener for scroll
+            window.addEventListener('scroll', updateProgressBar);
+            
+            // Initial update for correct position on load
+            updateProgressBar();
+        });
+    </script>
+</body>
+</html>
